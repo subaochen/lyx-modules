@@ -1,0 +1,19 @@
+#\DeclareLyXModule{SampleCharStyle}
+#DescriptionBegin
+#Sample file for charStyle,just modify on your need.
+#DescriptionEnd
+
+#Author: subaochen <subaochen@126.com>
+Format 49
+InsetLayout    CharStyle:Just a sample
+LyxType               charstyle
+LabelString           charStyleSample
+LatexType             command
+LatexName             charStyleSample
+Font
+Family              Sans
+EndFont
+Preamble
+\newcommand*{\charStyleSample}[1]{{\rmfamily #1}}
+EndPreamble
+End
