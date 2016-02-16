@@ -1,0 +1,31 @@
+#\DeclareLyXModule{Notice}
+#DescriptionBegin
+#Adds an environment for note paragraphs. 
+#Note paragraph is a paragraph in which the paragraph begin with N in a circle.
+#DescriptionEnd
+
+@Author: subaochen <subaochen@126.com>
+Format 49
+
+Style Notice
+LatexType Environment
+LatexName noticeparagraphs
+Align Block
+Margin Static
+LeftMargin "MMMM"
+ParIndent "MMMM"
+Preamble
+  \usepackage{tikz}
+  \usepackage{xcolor}
+  \definecolor{ocre}{RGB}{243,102,25} % orange color used for highlighting paragraph
+  \newenvironment{noticeparagraphs}{\par\vspace{10pt}\small % Vertical white space above the note paragraph and smaller font size
+  \begin{list}{}{
+  \leftmargin=35pt % Indentation on the left
+  \rightmargin=25pt}\item\ignorespaces % Indentation on the right
+  \makebox[-2.5pt]{
+  \begin{tikzpicture}[overlay]
+  \node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{ocre}{N}};\end{tikzpicture}} % Orange N in a circle
+  \advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after note paragraph
+EndPreamble
+End
+
