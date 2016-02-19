@@ -17,10 +17,16 @@ ParIndent "MMMM"
 Preamble
   \usepackage{tikz}
   \usepackage{xcolor}
-  \usepackage{mdframed}
+  \usepackage[framemethod=tikz]{mdframed}
+  \usepackage{showexpl}
   \definecolor{ocre}{RGB}{243,102,25} % orange color used for highlighting paragraph
+  \global\mdfdefinestyle{noticedefault}{
+    outerlinewidth=5pt,innerlinewidth=0pt,
+    outerlinecolor=red,
+    topline=false,bottomline=false
+  }
   \newenvironment{noticeparagraphs}{
-  \begin{mdframed}[linecolor=red]
+  \begin{mdframed}[style=noticedefault,frametitle={NOTICE}]
   \par\vspace{10pt}\small % Vertical white space above the note paragraph and smaller font size
   \begin{list}{}{
   \leftmargin=35pt % Indentation on the left

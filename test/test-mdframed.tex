@@ -1,0 +1,17 @@
+\documentclass{ctexart}
+
+\usepackage{xcolor}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{showexpl}
+\global\mdfdefinestyle{exampledefault}{%
+outerlinewidth=5pt,innerlinewidth=0pt,
+outerlinecolor=red,
+topline=false,bottomline=false
+}
+
+\begin{document}
+\begin{mdframed}[style=exampledefault,frametitle={NOTICE}]
+ExampleText
+\end{mdframed}
+
+\end{document}
