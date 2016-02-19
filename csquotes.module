@@ -1,0 +1,168 @@
+#\DeclareLyXModule{Context-sensitive Quotes}
+#DescriptionBegin
+#Adds support for the csquotes package. See the csquotes manual for details.
+#You can pass options to the package via \PassOptionsToPackage{<options>}{csquotes}
+#in the LaTeX Preamble.
+#DescriptionEnd
+#
+#Author: Jürgen Spitzmüller <spitz@lyx.org>
+
+Format 48
+
+Preamble
+  \usepackage{etoolbox}
+  \AtEndPreamble{\usepackage{csquotes}}
+EndPreamble
+
+
+#
+# Quote paragraphs
+#
+
+Style Quote
+End
+
+Style Quotation
+End
+
+Style Quote_(displayed)
+	CopyStyle             Quote
+	LaTeXName             displayquote
+	Argument 1
+	  LabelString         "Source"
+	EndArgument
+	Argument 2
+	  LabelString         "Interpunct."
+	EndArgument
+End
+
+
+#
+# Inline quoting
+#
+
+InsetLayout Flex:Enquote
+	LyXType               charstyle
+	LabelString           Enquote
+	LatexType             Command
+	LatexName             enquote
+	LabelFont
+	  Family              Roman
+	  Color               green
+	  Size                tiny
+	EndFont
+	Font
+	  Color               eolmarker
+	EndFont
+	ResetsFont            0
+End
+
+InsetLayout Flex:Enquote*
+	CopyStyle             Flex:Enquote
+	LabelString           Enquote*
+	LatexName             enquote*
+	Font
+	  Color               indexlabel
+	EndFont
+End
+
+InsetLayout Flex:Textquote
+	LyXType               charstyle
+	LabelString           "Textquote"
+	LatexType             Command
+	LatexName             textquote
+	LabelFont
+	  Family              Roman
+	  Color               green
+	  Size                tiny
+	EndFont
+	Font
+	  Color               eolmarker
+	EndFont
+	Argument 1
+	  LabelString         "Source"
+	EndArgument
+	Argument 2
+	  LabelString         "Interpunct."
+	EndArgument
+	ResetsFont            0
+End
+
+InsetLayout Flex:Textquote*
+	CopyStyle             Flex:Textquote
+	LabelString           "Textquote*"
+	LatexName             textquote*
+	Font
+	  Color               indexlabel
+	EndFont
+End
+
+
+#
+# Smart quoting
+#
+
+InsetLayout Flex:Blockquote
+	CopyStyle             Flex:Textquote
+	LyXType               Custom
+	Decoration            Classic
+	LabelString           Blockquote
+	LatexName             blockquote
+End
+
+
+#
+# Ellipses and stuff
+#
+
+InsetLayout Flex:[...]_[_]
+	LyXType               charstyle
+	Decoration            classic
+	LabelString           "[...]"
+	LatexType             Command
+	LatexName             textelp
+	LabelFont
+	  Family              Roman
+	  Color               blue
+	EndFont
+	ResetsFont            1
+End
+
+InsetLayout Flex:[_]_[...]
+	LyXType               charstyle
+	Decoration            classic
+	LabelString           "[ ][...]"
+	LatexType             Command
+	LatexName             textelp*
+	LabelFont
+	  Family              Roman
+	  Color               blue
+	EndFont
+	ResetsFont            1
+End
+
+InsetLayout Flex:[Insertion]
+	LyXType               charstyle
+	LabelString           "[Ins.]"
+	LatexType             Command
+	LatexName             textins
+	LabelFont
+	  Family              Roman
+	  Color               blue
+	  Size                tiny
+	EndFont
+	ResetsFont            0
+End
+
+InsetLayout Flex:[C]orrection
+	LyXType               charstyle
+	LabelString           "[C]orr."
+	LatexType             Command
+	LatexName             textins*
+	LabelFont
+	  Family              Roman
+	  Color               blue
+	  Size                tiny
+	EndFont
+	ResetsFont            0
+End

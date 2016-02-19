@@ -1,0 +1,33 @@
+#\DeclareLyXModule{MyQuotation}
+#DescriptionBegin
+#Adds an environment for note paragraphs. 
+#Note paragraph is a paragraph in which the paragraph begin with N in a circle.
+#DescriptionEnd
+
+#Author: subaochen <subaochen@126.com>
+Format 49
+
+Style MyQuotation
+Category              MainText
+Margin                Static
+LatexType             Environment
+LatexName             myquotation
+NextNoIndent          1
+LeftMargin            MMM
+RightMargin           MMM
+ParIndent             MM
+ParSkip               0
+ItemSep               0
+TopSep                0.5
+BottomSep             0.5
+ParSep                0
+Align                 Block
+AlignPossible         Block, Left, Right, Center
+Preamble
+\usepackage{mdframed}
+\usepackage{xcolor}
+\newenvironment{myquotation}
+{\begin{mdframed}[linecolor=red]\quotation}
+{\endquotation\end{mdframed}}
+EndPreamble
+End

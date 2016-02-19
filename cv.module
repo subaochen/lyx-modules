@@ -1,0 +1,123 @@
+#\DeclareLyXModule[splitbib.sty]{CV Environment}
+#DescriptionBegin
+#Defines a CV environment.
+#DescriptionEnd
+
+# Author: Julien Rioux <jrioux@lyx.org>
+
+Format 35
+
+ClassOptions
+	Other	"openbib"
+End
+
+PageStyle empty
+
+TitleLaTeXName "maketitle\thispagestyle{empty}"
+TitleLaTeXType CommandAfter
+
+AddToPreamble
+	\date{}
+
+	\newcommand{\SBsection}{Misc}
+	\newenvironment{SBcategory}{
+			\begingroup%
+			\let\oldcite\nocite%
+			\def\nocite##1{\oldcite{##1}\SBentries{##1}}%
+			\expandafter\category\expandafter{\SBsection}%
+		}{\endcategory\endgroup}
+
+	\def\@maketitle{%
+		\begin{center}%
+			\let\footnote\thanks
+			{\huge\scshape \@title \par}%
+		\end{center}%
+		\vskip 1.5em%
+		{\Large\scshape \@author\hfill\@date}%
+		\par%
+	}
+
+	\renewcommand{\section}{\@startsection{section}{11}%
+		{0mm} % Einzug
+		{1.5\baselineskip} % Vorabstand
+		{0.7\baselineskip} % Nachabstand
+		{\large\scshape\hrule\vspace{0.8\baselineskip}}}
+
+	\renewcommand{\subsection}{\@startsection{subsection}{12}%
+		{0mm} % Einzug
+		{0.3\baselineskip} % Vorabstand
+		{0.3\baselineskip} % Nachabstand
+		{\normalsize\scshape}}
+
+	\usepackage[export,nonewsec]{splitbib}
+	\def\NMSB@stylecv#1#2{%
+		\vspace{1.5\baselineskip}\hrule%
+		\pdfbookmark[1]{#1#2}{sec:#1#2}%
+		\vspace{0.8\baselineskip}%
+		\csname SB\NMSB@level font\endcsname{#1#2}}
+	\SBtitlestyle{cv}
+	\SBsubtitlestyle{simple}
+	\renewcommand{\SBtitlefont}[1]{{\large\scshape #1}}
+	\renewcommand{\SBsubtitlefont}[1]{{\normalsize\scshape\hskip\leftmargin #1}}
+EndPreamble
+
+Style CV
+	CopyStyle	List
+	LabelString	"0000 -- 0000"
+	LaTeXName	cv
+	LaTeXType	Item_Environment
+	Preamble
+		\newenvironment{cv}{
+			\begin{list}{}
+				{
+				\setlength{\itemsep}{0pt}
+				\setlength{\labelwidth}{77pt}
+				\setlength{\leftmargin}{84pt}
+				\setlength{\parsep}{0pt}
+				\setlength{\parskip}{0pt}
+				\renewcommand{\makelabel}[1]{##1\hfil}
+				}
+		}{
+			\end{list}
+		}
+	EndPreamble
+End
+
+Style Section
+	LabelCounter	""
+	LabelType	No_Label
+	TocLevel        1
+End
+
+Style Subsection
+	LabelCounter	""
+	LabelType	No_Label
+	TocLevel        2
+End
+
+Style Title
+	Font
+		Shape	Smallcaps
+		Size	Huge
+	EndFont
+End
+
+Style Author
+	Font
+		Shape	Smallcaps
+		Size	Large
+	EndFont
+End
+
+Style Bibliography_Section
+	CopyStyle	Section
+	Category	BackMatter
+	LaTeXName	def\SBsection
+	LaTeXType	command
+End
+
+Style Bibliography_List
+	Category	BackMatter
+	LaTeXName	SBcategory
+	LaTeXType	environment
+End

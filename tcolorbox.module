@@ -1,0 +1,87 @@
+#\DeclareLyXModule{tcolorbox environment}
+#DescriptionBegin
+# To insert a tcolorbox environment.
+# 建立 tcolorbox 環境
+#DescriptionEnd
+# Author : Mingyi Wu
+# Date : 2013/12/12
+
+Requires    tcolorbox | xcolor
+AddToPreamble
+\usepackage[svgnames]{xcolor}
+\usepackage[skins,documentation,listingsutf8]{tcolorbox}
+\tcbset{listing engine=listings,
+listing inputencoding=utf8,
+drop fuzzy shadow,
+listing options={style=tcblatex,keywordstyle=\color{blue}}}
+EndPreamble
+# 沒有做任何設定的 tcolorbox
+InsetLayout Custom:Tcolorbox(default)
+LyXType custom
+Labelstring    Box
+Decoration  classic
+LabelFont
+Color   collapsable
+Size    Small
+EndFont
+MultiPar    true
+LatexName   tcolorbox
+LatexType   Environment
+End
+# 藍色的, 上層藍，下層白
+InsetLayout Custom:Tcolorbox(Blue)
+LyXType custom
+Labelstring    Box(B)
+Decoration  classic
+LabelFont
+Color   collapsable
+Size    Small
+EndFont
+MultiPar    true
+LatexName   myBlueBox
+LatexType   Environment
+Preamble
+\newtcolorbox{myBlueBox}{colframe=Navy!50!ExampleFrame,bicolor,colback=Navy!5!ExampleBack,colbacklower=white}
+EndPreamble
+End
+# 紅色的盒子，單色
+InsetLayout Custom:Tcolorbox(Red)
+LyXType custom
+Labelstring    CrBox(R)
+Decoration  classic
+LabelFont
+Color   collapsable
+Size    Small
+EndFont
+MultiPar    true
+LatexName   tcolorbox
+LatexType   Environment
+LatexParam  "[colback=red!5!white,colframe=red!75!black]"
+End
+# default tcolorbox setting
+InsetLayout Custom:tcbset
+LyXType custom
+Labelstring     tcbset
+Decoration  classic
+LabelFont
+Color   collapsable
+Size    Small
+EndFont
+MultiPar    true
+LatexName   tcbset
+LatexType   command
+End
+# 插入分隔下層的指令
+InsetLayout Custom:tcblower
+LyXType custom
+Labelstring     tcblower
+Decoration  classic
+LabelFont
+Color   collapsable
+Size    Small
+EndFont
+MultiPar    false
+LatexName   tcblower
+LatexType   Command
+End
+

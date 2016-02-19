@@ -1,0 +1,13 @@
+#\DeclareLyXModule[comment.sty]{Print Comments}
+#DescriptionBegin
+#Typeset comment notes in LyX. When used with notes-mutate lfun,
+#it can be used even for normal LyX notes.
+#DescriptionEnd
+
+Format 11
+
+AddToPreamble
+	\usepackage{comment}
+	\includecomment{comment}
+	\@savsf=1
+EndPreamble

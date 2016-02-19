@@ -1,0 +1,112 @@
+#\DeclareLyXModule[soul.sty]{soul emphasis environments}
+#DescriptionBegin
+#Defines some custom insets to implement the soul package.
+#DescriptionEnd
+#Requires	
+#Excludes
+
+#Author: Stephen 
+
+Format	 	 11
+
+Requires	color
+
+	AddToPreamble
+		\usepackage{soul}
+	EndPreamble
+
+InsetLayout spaceletters
+	LyxType               charstyle
+	LabelType	      Static
+	LabelString           spacedletters
+	Decoration	      conglomerate
+	Font
+		Color		blue
+		Family		Typewriter
+	EndFont
+	LabelFont
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	MultiPar	      true
+	LatexType             command
+	LatexName             so
+End
+
+InsetLayout strikethrough
+	LyxType               charstyle
+	LabelType	      Static
+	LabelString           strike
+	Decoration	      conglomerate
+	BgColor		      black
+	Font
+		Color		red
+		Family		Typewriter
+	EndFont
+	LabelFont
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	MultiPar	      true
+	LatexType             command
+	LatexName             st
+End
+
+InsetLayout underline
+	LyxType               charstyle
+	LabelType	      Static
+	LabelString           ul
+	Decoration	      conglomerate
+	BgColor			blue
+	Font
+		Color		yellow
+		Family		sans
+	EndFont
+	LabelFont
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	MultiPar	      true
+	LatexType             command
+	LatexName             ul
+End
+
+InsetLayout highlight
+	LyxType               charstyle
+	LabelType	      Static
+	LabelString           hl
+	Decoration	      conglomerate
+	BgColor			yellow
+	Font
+		Color		blue
+	EndFont
+	LabelFont
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	MultiPar	      true
+	LatexType             command
+	LatexName             hl
+End
+
+InsetLayout capitalise
+	LyxType               charstyle
+	LabelType	      Static
+	LabelString           caps
+	Decoration	      conglomerate
+	Font
+		shape		smallcaps
+	EndFont
+	LabelFont
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	MultiPar	      true
+	LatexType             command
+	LatexName             caps
+End

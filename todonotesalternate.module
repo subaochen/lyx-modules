@@ -1,0 +1,126 @@
+#\DeclareLyXModule{ToDo Notes Environments}
+#DescriptionBegin
+#Defines some custom insets to implement the todonotes package.
+#DescriptionEnd
+#Requires	
+#Excludes
+
+#Author: Stephen 
+
+Format	 	 11
+
+
+	AddToPreamble
+		\usepackage[color=green!40]{todonotes}
+	EndPreamble
+
+
+
+InsetLayout MakeTableOfToDos
+	LyxType               custom
+	LabelType	      Static
+	LabelString           Table_of_todos
+	Decoration	      classic
+	BgColor			blue
+	Font
+		Color		yellow
+		Family		Typewriter
+	EndFont
+	LabelFont
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	Align			Center
+	MultiPar	      0
+	LatexType             command
+	LatexName             tableoftodos
+	OptionalArgs          0
+	Preamble
+\newcommand{\tableoftodos}[1]{\listoftodos[Table of Items Still To Do]{#1}}
+	EndPreamble
+End
+
+
+InsetLayout Todo[Inline]
+	LyxType               custom
+	LabelString           ToDo[Inline]
+	Decoration		classic
+	BgColor			blue
+	Font
+		Color		yellow
+		Family		Typewriter
+	EndFont		
+	LabelFont
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	MultiPar		true
+	LatexType             command
+	LatexName             todo
+	LatexParam	      [inline]
+End
+
+InsetLayout Todo[margin]
+	LyxType               custom
+	LabelString           ToDo[margin]
+	Decoration		classic
+	BgColor			blue
+	Font
+		Color		yellow
+		Family		Typewriter
+	EndFont
+	LabelFont		
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	MultiPar		true
+	LatexType             command
+	LatexName             todo
+End
+
+InsetLayout MissingFigure
+	LyxType               custom
+	LabelString           missingFigure
+	Decoration		classic
+	BgColor			blue
+	Font
+		Color		yellow
+		Family		Typewriter
+	EndFont
+	LabelFont		
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	MultiPar		0
+	LatexType             command
+	LatexName             missingfigure
+	OptionalArgs          1
+End
+
+
+
+InsetLayout Warning
+	LyxType               custom
+	LabelString           Warning
+	Decoration		classic
+	BgColor			red
+	Font
+		Color		white
+		Family		Typewriter
+	EndFont
+	LabelFont		
+		Color		blue
+		Family		Sans
+		Size		Small
+	EndFont
+	MultiPar		true
+	LatexType               command
+	LatexName               warning
+	Preamble
+\newcommand{\warning}[1]{\todo[color=red!80,prepend,caption={Warning!}]{#1}}
+	EndPreamble
+End
