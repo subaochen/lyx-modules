@@ -1,0 +1,25 @@
+#\DeclareLyXModule{TODO notes}
+#DescriptionBegin
+#Inserts TODO-notes in the output. A list of todo notes can be produced
+#by inserting \listoftodos in ERT.
+#DescriptionEnd
+# Author: Juergen Spitzmueller <spitz@lyx.org>
+
+Format 11
+
+InsetLayout TODO
+	LyXType               custom
+	LabelString           TODO
+	LatexType             command
+	LatexName             todo
+	Decoration            classic
+	LabelFont
+	  Color               magenta
+	  Size                Small
+	EndFont
+	MultiPar              false
+	OptionalArgs          1
+	Preamble
+		\RequirePackage{todonotes}
+	EndPreamble
+End

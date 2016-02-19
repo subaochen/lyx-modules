@@ -1,1 +1,1 @@
-# some lyx modules I created
+# some lyx modules

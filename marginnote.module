@@ -1,0 +1,42 @@
+#\DeclareLyXModule{Marginnotes}
+#DescriptionBegin
+#Provides custom insets to insert Marginal Notes that can be used within
+#floats (using the marginnote package).
+#DescriptionEnd
+
+# Authors: Jürgen Spitzmüller <spitz@lyx.org>
+
+Format 48
+
+AddToPreamble
+	\RequirePackage{marginnote}
+EndPreamble
+
+#
+# Notes
+#
+
+InsetLayout Flex:Margin_Note
+	LyxType		custom
+	LabelString	"Margin"
+	Decoration	classic
+	LabelFont
+	    Color	blue
+	    Family	Sans
+	    Size	Small
+	EndFont
+	MultiPar	true
+	LatexType	command
+	LatexName	marginnote
+	Argument 1
+		LabelString	"Left"
+		MenuString	"Insert Left-Page Text"
+		Tooltip		"If you want specific text if this appears on left page, insert here"
+	EndArgument
+	Argument post:1
+		LabelString	"VOffset"
+		MenuString	"Insert Vertical Offset"
+		Tooltip		"Manually move the Marginnote up or down"
+	EndArgument
+End
+

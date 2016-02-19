@@ -21,21 +21,26 @@ Preamble
   \usepackage{showexpl}
   \definecolor{ocre}{RGB}{243,102,25} % orange color used for highlighting paragraph
   \global\mdfdefinestyle{noticedefault}{
-    outerlinewidth=5pt,innerlinewidth=0pt,
-    outerlinecolor=red,
+    outerlinewidth=3pt,innerlinewidth=0pt,
+    outerlinecolor=ocre,
     topline=false,bottomline=false
   }
   \newenvironment{noticeparagraphs}{
-  \begin{mdframed}[style=noticedefault,frametitle={NOTICE}]
-  \par\vspace{10pt}\small % Vertical white space above the note paragraph and smaller font size
-  \begin{list}{}{
-  \leftmargin=35pt % Indentation on the left
-  \rightmargin=25pt}\item\ignorespaces % Indentation on the right
-  \makebox[-2.5pt]{
-  \begin{tikzpicture}[overlay]
-  \node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{ocre}{N}};\end{tikzpicture}} % Orange N in a circle
-  \advance\baselineskip -1pt}{\end{list}\vskip5pt
-  \end{mdframed}} % Tighter line spacing and white space after note paragraph
+  \begin{mdframed}[style=noticedefault,frametitle={提醒}]
+    \par\vspace{10pt}\small % Vertical white space above the note paragraph and smaller font size
+    \begin{list}{}{
+    \leftmargin=35pt % Indentation on the left
+    \rightmargin=25pt}\item\ignorespaces % Indentation on the right
+    \makebox[-2.5pt]{
+    \begin{tikzpicture}[overlay]
+      \node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-10pt,0pt){\textcolor{ocre}{N}};
+    \end{tikzpicture}
+    } % Orange N in a circle
+    \advance\baselineskip -1pt}{
+    \end{list}
+    \vskip5pt
+  \end{mdframed}
+  } % Tighter line spacing and white space after note paragraph
 EndPreamble
 End
 
