@@ -1,16 +1,38 @@
 \documentclass{ctexart}
 
-\usepackage{xcolor}
+\usepackage{tikz,xcolor}
 \usepackage[framemethod=tikz]{mdframed}
-\usepackage{showexpl}
-\global\mdfdefinestyle{exampledefault}{%
-outerlinewidth=5pt,innerlinewidth=0pt,
-outerlinecolor=red,
-topline=false,bottomline=false
+\usetikzlibrary{calc,arrows}
+
+
+\tikzset{
+  warningsymbol/.style={
+    rectangle,draw=red,
+    fill=white,scale=1,
+    overlay
+  }
+}
+
+\mdfdefinestyle{exampledefault}{
+  hidealllines=true,leftline=true,
+  skipabove=12pt,skipbelow=12pt,
+  innertopmargin=0.4em,
+  innerbottommargin=0.4em,
+  innerrightmargin=0.7em,
+  rightmargin=0.7em,
+  innerleftmargin=1.7em,
+  leftmargin=0.7em,
+  middlelinewidth=.2em,
+  linecolor=red,
+  fontcolor=red,
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5∗(0,\y1)$) node[warningsymbol] {\$};}, 
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5∗(0,\y1)$) node[warningsymbol] {\$};},
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5∗(0,\y1)$) node[warningsymbol] {\$};},
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5∗(0,\y1)$) node[warningsymbol] {\$};},
 }
 
 \begin{document}
-\begin{mdframed}[style=exampledefault,frametitle={NOTICE}]
+\begin{mdframed}[style=exampledefault]
 ExampleText
 \end{mdframed}
 
