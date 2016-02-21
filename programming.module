@@ -1,0 +1,20 @@
+#\DeclareLyXModule{Programming related style}
+#DescriptionBegin
+#style for function, variable, class and etc.
+#DescriptionEnd
+
+#Author: subaochen <subaochen@126.com>
+
+Format 49
+InsetLayout     CharStyle:Function
+#LyxType         charstyle
+LabelString     function
+LatexType       command
+LatexName       function
+Font
+  Family        Sans
+EndFont
+Preamble
+\newcommand*{\func}[1]{{\texttt #1}}
+EndPreamble
+End

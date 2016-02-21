@@ -1,0 +1,32 @@
+#\DeclareLyXModule{Drop Cap}
+#DescriptionBegin
+#Allows for the easy creation of drop caps through a specialized character style.
+#Uses the lettrine package and stringstrings package.  Limitations: Only standard
+#ascii characters (letters and numbers) can be used in the drop letter and all-caps
+#text.
+#DescriptionEnd
+
+# Author : Robert Oakes <LyX-Devel@oak-tree.us>
+
+Format 49
+Requires	lettrine,stringstrings
+
+InsetLayout CharStyle:DropCap
+	LyxType               charstyle
+	LabelString           dropcap
+	LatexType             command
+	LatexName             dropcap
+	Font
+		Family              Serif
+		Shape               Smallcaps
+	EndFont
+	Preamble
+		\usepackage{lettrine}
+		\usepackage{stringstrings}
+		\newcommand{\dropcap}[1]{%
+			\substring[e]{#1}{1}{1}%
+			\edef\LeadingCap{\thestring}
+			\substring[q]{#1}{2}{$}%
+			\lettrine{\retokenize[v]{\LeadingCap}}{\thestring}}
+	EndPreamble
+End

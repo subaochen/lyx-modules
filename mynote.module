@@ -1,8 +1,7 @@
-#\DeclareLyXModule{note(tip/warning/notice)}
+#\DeclareLyXModule{mynote}
 #DescriptionBegin
-# To insert a tip/warning/notice environment.
+# mynote.
 #DescriptionEnd
-# Author : Su Baochen<subaochen@126.com>
 
 Format 49
 AddToPreamble
