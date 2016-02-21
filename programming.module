@@ -5,9 +5,11 @@
 
 #Author: subaochen <subaochen@126.com>
 
-Format 49
+Format 7
+
+# function
 InsetLayout     CharStyle:Function
-#LyxType         charstyle
+LyxType         charstyle
 LabelString     function
 LatexType       command
 LatexName       function
@@ -15,6 +17,63 @@ Font
   Family        Sans
 EndFont
 Preamble
-\newcommand*{\func}[1]{{\texttt #1}}
+  \newcommand{\function}[1]{{\texttt #1}}
 EndPreamble
 End
+
+# type 
+InsetLayout     CharStyle:Type
+LyxType         charstyle
+LabelString     type
+LatexType       command
+LatexName       type
+Font
+  Family        Sans
+EndFont
+Preamble
+  \newcommand{\type}[1]{{\texttt #1}}
+EndPreamble
+End
+
+# dir
+InsetLayout     CharStyle:Dir
+LyxType         charstyle
+LabelString     dir
+LatexType       command
+LatexName       dir
+Font
+  Family        Sans
+EndFont
+Preamble
+  \newcommand{\dir}[1]{{\texttt #1}}
+EndPreamble
+End
+
+# file
+InsetLayout     CharStyle:File
+LyxType         charstyle
+LabelString     file
+LatexType       command
+LatexName       file
+Font
+  Family        Sans
+EndFont
+Preamble
+  \newcommand{\file}[1]{{\texttt #1}}
+EndPreamble
+End
+
+# package
+InsetLayout     CharStyle:Package
+LyxType         charstyle
+LabelString     package
+LatexType       command
+LatexName       package
+Font
+  Family        Sans
+EndFont
+Preamble
+  \newcommand{\package}[1]{{\texttt #1}}
+EndPreamble
+End
+
