@@ -5,10 +5,10 @@
 
 #Author: subaochen <subaochen@126.com>
 
-Format 7
+Format 49
 
 # function
-InsetLayout     CharStyle:Function
+InsetLayout     Flex:Function
 LyxType         charstyle
 LabelString     function
 LatexType       command
@@ -22,7 +22,7 @@ EndPreamble
 End
 
 # type 
-InsetLayout     CharStyle:Type
+InsetLayout     Flex:Type
 LyxType         charstyle
 LabelString     type
 LatexType       command
@@ -36,7 +36,7 @@ EndPreamble
 End
 
 # dir
-InsetLayout     CharStyle:Dir
+InsetLayout     Flex:Dir
 LyxType         charstyle
 LabelString     dir
 LatexType       command
@@ -50,7 +50,7 @@ EndPreamble
 End
 
 # file
-InsetLayout     CharStyle:File
+InsetLayout     Flex:File
 LyxType         charstyle
 LabelString     file
 LatexType       command
@@ -64,7 +64,7 @@ EndPreamble
 End
 
 # package
-InsetLayout     CharStyle:Package
+InsetLayout     Flex:Package
 LyxType         charstyle
 LabelString     package
 LatexType       command

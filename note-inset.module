@@ -6,16 +6,16 @@
 
 Format 49
 
-InsetLayout 	Flex:Warning
+InsetLayout 	Flex:Note
 LyXType 	custom
-Labelstring    	Warning
+Labelstring    	Note
 Decoration  	classic
 LabelFont
   Color   	collapsable
   Size    	Small
 EndFont
 MultiPar    	true
-LatexName   	Warning
+LatexName   	Note
 LatexType   	Environment
 Preamble
 
@@ -24,16 +24,16 @@ Preamble
   \usepackage[framemethod=tikz]{mdframed}
   \usetikzlibrary{calc}
   \usepackage{fourier-orns}
-  \definecolor{warningColor}{named}{red}%TODO：图书往往是黑白印刷的，红色不利于将来出版
+  \definecolor{noteColor}{named}{green}%TODO：图书往往是黑白印刷的，颜色不利于将来出版
 \tikzset{
-    warningsymbol/.style={
+    notesymbol/.style={
         rectangle,
-        draw=warningColor,
+        draw=noteColor,
         fill=white,
         scale=1,
         overlay}
 }
-\global\mdfdefinestyle{warning}{%
+\global\mdfdefinestyle{note}{%
   hidealllines=true,leftline=true,
   skipabove=12,skipbelow=12pt,
   innertopmargin=0.4em,%
@@ -43,19 +43,19 @@ Preamble
   innerleftmargin=1.7em,%
   leftmargin=0.7em,%
   middlelinewidth=.2em,%
-  linecolor=warningColor,%
-  fontcolor=warningColor,%
+  linecolor=noteColor,%
+  fontcolor=noteColor,%
   firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[warningsymbol] {\danger};},%
+       node[notesymbol] {\danger};},%
   secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[warningsymbol] {\danger};},%
+       node[notesymbol] {\danger};},%
   middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[warningsymbol] {\danger};},%
+       node[notesymbol] {\danger};},%
   singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[warningsymbol] {\danger};}%
+       node[notesymbol] {\danger};}%
  }
 
-\newmdenv[style=warning]{Warning}
+\newmdenv[style=note]{Note}
 
 EndPreamble
 End
