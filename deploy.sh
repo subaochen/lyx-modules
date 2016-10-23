@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp *.module $HOME/.lyx/layouts/
+cp worked/*.module $HOME/.lyx/layouts/

@@ -1,21 +1,22 @@
-#\DeclareLyXModule{twn(tip/warning/notice)}
+#\DeclareLyXModule{warning inset}
 #DescriptionBegin
-# To insert a tip/warning/notice environment.
+# To insert a warning environment.
+# Please insert warning from menu:Insert->Insert Custom Inset:warning
 #DescriptionEnd
 # Author : Su Baochen<subaochen@126.com>
 
 Format 49
 
-InsetLayout 	Flex:Note
+InsetLayout 	Flex:Warning
 LyXType 	custom
-Labelstring    	Note
+Labelstring    	Warning
 Decoration  	classic
 LabelFont
   Color   	collapsable
   Size    	Small
 EndFont
 MultiPar    	true
-LatexName   	Note
+LatexName   	Warning
 LatexType   	Environment
 Preamble
 
@@ -24,16 +25,16 @@ Preamble
   \usepackage[framemethod=tikz]{mdframed}
   \usetikzlibrary{calc}
   \usepackage{fourier-orns}
-  \definecolor{noteColor}{named}{green}%TODO：图书往往是黑白印刷的，颜色不利于将来出版
+  \definecolor{warningColor}{named}{red}%TODO：图书往往是黑白印刷的，红色不利于将来出版
 \tikzset{
-    notesymbol/.style={
+    warningsymbol/.style={
         rectangle,
-        draw=noteColor,
+        draw=warningColor,
         fill=white,
         scale=1,
         overlay}
 }
-\global\mdfdefinestyle{note}{%
+\global\mdfdefinestyle{warning}{%
   hidealllines=true,leftline=true,
   skipabove=12,skipbelow=12pt,
   innertopmargin=0.4em,%
@@ -43,20 +44,19 @@ Preamble
   innerleftmargin=1.7em,%
   leftmargin=0.7em,%
   middlelinewidth=.2em,%
-  linecolor=noteColor,%
-  fontcolor=noteColor,%
+  linecolor=warningColor,%
+  fontcolor=warningColor,%
   firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[notesymbol] {\danger};},%
+       node[warningsymbol] {\danger};},%
   secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[notesymbol] {\danger};},%
+       node[warningsymbol] {\danger};},%
   middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[notesymbol] {\danger};},%
+       node[warningsymbol] {\danger};},%
   singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[notesymbol] {\danger};}%
+       node[warningsymbol] {\danger};}%
  }
 
-\newmdenv[style=note]{Note}
+\newmdenv[style=warning]{Warning}
 
 EndPreamble
 End
-

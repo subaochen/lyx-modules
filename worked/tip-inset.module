@@ -1,39 +1,40 @@
-#\DeclareLyXModule{twn(tip/warning/notice)}
+#\DeclareLyXModule{tip inset}
 #DescriptionBegin
-# To insert a tip/warning/notice environment.
+# To insert a tip environment.
+# Please insert tip from menu:insert->insert custom inset->Tip
 #DescriptionEnd
 # Author : Su Baochen<subaochen@126.com>
 
 Format 49
 
-InsetLayout 	Flex:Warning
+InsetLayout 	Flex:Tip
 LyXType 	custom
-Labelstring    	Warning
+Labelstring    	Tip
 Decoration  	classic
 LabelFont
   Color   	collapsable
   Size    	Small
 EndFont
 MultiPar    	true
-LatexName   	Warning
+LatexName   	Tip
 LatexType   	Environment
 Preamble
-
   \usepackage{tikz}
+  \usetikzlibrary{calc}
   \usepackage{color}
   \usepackage[framemethod=tikz]{mdframed}
-  \usetikzlibrary{calc}
+  % see http://www.bakoma-tex.com/doc/fonts/fourier/fourier-orns.pdf
   \usepackage{fourier-orns}
-  \definecolor{warningColor}{named}{red}%TODO：图书往往是黑白印刷的，红色不利于将来出版
+  \definecolor{tipColor}{named}{blue}%TODO：printed book can not deal with color
 \tikzset{
-    warningsymbol/.style={
+    tipsymbol/.style={
         rectangle,
-        draw=warningColor,
+        draw=tipColor,
         fill=white,
         scale=1,
         overlay}
 }
-\global\mdfdefinestyle{warning}{%
+\global\mdfdefinestyle{tip}{%
   hidealllines=true,leftline=true,
   skipabove=12,skipbelow=12pt,
   innertopmargin=0.4em,%
@@ -43,19 +44,19 @@ Preamble
   innerleftmargin=1.7em,%
   leftmargin=0.7em,%
   middlelinewidth=.2em,%
-  linecolor=warningColor,%
-  fontcolor=warningColor,%
+  linecolor=tipColor,%
+  fontcolor=tipColor,%
   firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[warningsymbol] {\danger};},%
+       node[tipsymbol] {\textxswdown};},%
   secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[warningsymbol] {\danger};},%
+       node[tipsymbol] {\textxswdown};},%
   middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[warningsymbol] {\danger};},%
+       node[tipsymbol] {\textxswdown};},%
   singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-       node[warningsymbol] {\danger};}%
+       node[tipsymbol] {\textxswdown};}%
  }
 
-\newmdenv[style=warning]{Warning}
+\newmdenv[style=tip]{Tip}
 
 EndPreamble
 End
