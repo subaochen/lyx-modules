@@ -1,4 +1,4 @@
-#\DeclareLyXModule{notice inset}
+#\DeclareLyXModule{提示inset}
 #DescriptionBegin
 # To insert a notice environment.
 # Please insert notice from menu:insert->insert custom inset->Notice
@@ -9,7 +9,7 @@ Format 49
 
 InsetLayout 	Flex:Notice
 LyXType 	custom
-Labelstring    	Notice
+Labelstring    	提示
 Decoration  	classic
 LabelFont
   Color   	collapsable

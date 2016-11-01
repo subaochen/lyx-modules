@@ -1,4 +1,4 @@
-#\DeclareLyXModule{warning inset}
+#\DeclareLyXModule{警告inset}
 #DescriptionBegin
 # To insert a warning environment.
 # Please insert warning from menu:Insert->Insert Custom Inset:warning
@@ -9,7 +9,7 @@ Format 49
 
 InsetLayout 	Flex:Warning
 LyXType 	custom
-Labelstring    	Warning
+Labelstring    	警告
 Decoration  	classic
 LabelFont
   Color   	collapsable

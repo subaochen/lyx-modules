@@ -1,4 +1,4 @@
-#\DeclareLyXModule{tip inset}
+#\DeclareLyXModule{技巧inset}
 #DescriptionBegin
 # To insert a tip environment.
 # Please insert tip from menu:insert->insert custom inset->Tip
@@ -9,7 +9,7 @@ Format 49
 
 InsetLayout 	Flex:Tip
 LyXType 	custom
-Labelstring    	Tip
+Labelstring    	技巧
 Decoration  	classic
 LabelFont
   Color   	collapsable

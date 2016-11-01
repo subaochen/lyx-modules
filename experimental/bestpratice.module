@@ -1,12 +1,13 @@
-#\DeclareLyXModule{best practice}
+#\DeclareLyXModule{最佳实践}
 #DescriptionBegin
 # best practice paragraph.
 #DescriptionEnd
+# 在单独的文件中表现正常，但是在book环境下失败，不知道为什么
 
 Format 49
 InsetLayout 	Flex:BestPractice
 LyXType 	custom
-Labelstring    	BestPractice
+Labelstring    	最佳实践
 Decoration  	classic
 LabelFont
   Color   	collapsable
