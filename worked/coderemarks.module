@@ -7,6 +7,7 @@ Format 49
 
 AddToPreamble
 \usepackage{tikz}
+\usepackage{ifthen}
 %% Code Remarks -- Miek Gieben
 %% define 2 commands
 %% \longremark[1] where you can say something about the code
